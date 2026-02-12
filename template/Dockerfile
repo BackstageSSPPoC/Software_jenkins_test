@@ -1,20 +1,13 @@
-# Use official Node.js image
-FROM alpine:latest
+FROM node:18-alpine
 
-# # Create app directory inside container
-# WORKDIR /usr/src/app
+WORKDIR /usr/src/app
 
-# # Copy package.json first (better layer caching)
-# COPY package*.json ./
+COPY package*.json ./
 
-# # Install dependencies (none for now, but good practice)
-# RUN npm install
+RUN npm install --omit=dev
 
-# # Copy rest of the app
-# COPY . .
+COPY . .
 
-# # Expose port
-# EXPOSE 3000
+EXPOSE 3000
 
-# # Start the app
-# CMD ["npm", "start"]
+CMD ["node", "server.js"]
