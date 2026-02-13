@@ -9,7 +9,7 @@ metadata:
     jenkins.io/job-full-name: Backstage_SSP_PoC/${{values.app_name}}/main
     # argocd/app-name: ${{values.app_name}}
     argocd/app-selector: app.kubernetes.io/instance=${{values.app_name}}
-    # argocd/instance-name: default
+    argocd/instance-name: default
 
 spec:
   type: service
