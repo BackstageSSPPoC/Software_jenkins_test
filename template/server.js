@@ -2,7 +2,7 @@ const http = require("http");
 
 const server = http.createServer((req, res) => {
   res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("Hello from my Docker container!\n");
+  res.end("Welcome to Backstage Self Service Portal!\n");
 });
 
 const PORT = 3000;
