@@ -3,7 +3,7 @@ kind: Template
 metadata:
   name: Jenkins-Test-template
   title: Github-Jenkins-ArgoCD Template
-  description: Creates a production-ready Kubernetes deployment with Jenkins CI/CD and ArgoCD integration.
+  description: Creates a production-ready Kubernetes deployment with Jenkins CI and ArgoCD integration.
 spec:
   owner: development
   type: service
