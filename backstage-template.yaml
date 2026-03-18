@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: Jenkins-Test-template
-  title: Github-Jenkins-ArgoCD Template
+  title: GitHub-Jenkins-ArgoCD Template
   description: Creates a production-ready Kubernetes deployment with Jenkins CI and ArgoCD integration.
 spec:
   owner: development
