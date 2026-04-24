@@ -48,11 +48,15 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
+                   withCredentials([string(credentialsId: 'sonar-token', variable: 'SONAR_TOKEN')]) {
+
                     sh '''
                     npx sonar-scanner \
                       -Dsonar.projectKey=${APP_NAME} \
                       -Dsonar.sources=.
+                      -Dsonar.login=$SONAR_TOKEN
                     '''
+                   }
                 }
             }
         }
