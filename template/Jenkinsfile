@@ -47,7 +47,7 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('monika sonarqube') {
+                withSonarQubeEnv('SonarQube') {
                     sh '''
                     npx sonar-scanner \
                       -Dsonar.projectKey=${APP_NAME} \
