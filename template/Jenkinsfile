@@ -101,7 +101,7 @@ pipeline {
 
                     // git clone --depth 1 https://${GITHUB_TOKEN}@github.com/BackstageSSPPoC/k8s-manifests.git
                     // cd k8s-manifests
-                    git clone --depth 1 https://${GIT_USER}:${GITHUB_TOKEN}@github.com/BackstageSSPPoC/k8s-manifests.git
+                    git clone --depth 1 https://x-access-token:${GITHUB_TOKEN}@github.com/BackstageSSPPoC/k8s-manifests.git
                     cd k8s-manifests
                     
                     mkdir -p apps/${APP_NAME}
@@ -117,7 +117,7 @@ pipeline {
                     git add .
                     git commit -m "Deploy ${APP_NAME} build ${BUILD_NUMBER}" || true
                     // git push origin main
-                    git remote set-url origin https://${GIT_USER}:${GITHUB_TOKEN}@github.com/BackstageSSPPoC/k8s-manifests.git
+                    git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/BackstageSSPPoC/k8s-manifests.git
                     '''
                 }
             }
