@@ -99,9 +99,11 @@ pipeline {
                     sh '''
                     rm -rf k8s-manifests
 
-                    git clone --depth 1 https://${GITHUB_TOKEN}@github.com/BackstageSSPPoC/k8s-manifests.git
+                    // git clone --depth 1 https://${GITHUB_TOKEN}@github.com/BackstageSSPPoC/k8s-manifests.git
+                    // cd k8s-manifests
+                    git clone --depth 1 https://${GIT_USER}:${GITHUB_TOKEN}@github.com/BackstageSSPPoC/k8s-manifests.git
                     cd k8s-manifests
-
+                    
                     mkdir -p apps/${APP_NAME}
 
                     cp -r ../manifest-templates/* apps/${APP_NAME}/
