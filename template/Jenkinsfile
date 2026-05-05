@@ -278,7 +278,10 @@ pipeline {
         }
         failure {
             echo "Pipeline failed!"
-            explainError() 
+            script {                          // ✅ wrap in script block
+                def explanation = explainError()
+                echo "AI Explanation: ${explanation}"
+            }
         }
     }
 }
