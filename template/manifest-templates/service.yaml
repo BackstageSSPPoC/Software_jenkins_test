@@ -5,12 +5,12 @@ metadata:
 spec:
   selector:
     app: ${APP_NAME}
-  type: NodePort
   ports:
     - protocol: TCP
       port: 80
       targetPort: 3000
-      nodePort: 30007
+  type: LoadBalancer
+    
 
 
 # apiVersion: networking.k8s.io/v1
