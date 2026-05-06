@@ -271,21 +271,17 @@ pipeline {
     post {
         always {
             sh "docker logout || true"
-            sh "docker image prune -f || true"
-          script {
-            try {
-              explainError()
-            } catch (err) {
-              echo "AI explanation skipped: ${err}"
-            }
-          }   
+            sh "docker image prune -f || true" 
         }
         success {
             echo "CI + CD pipeline completed successfully!"
         }
         failure {
             echo "Pipeline failed!"
-            
+            script {                          
+                def explanation = explainError()
+                echo "AI Explanation: ${explanation}"
+            }
         }
     }
 }
